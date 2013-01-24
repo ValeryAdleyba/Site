@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)http://twitter.github.com/bootstrap/examples/carousel.html# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Carousel Template · Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <style>
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+
+    body {
+      padding-bottom: 40px;
+      color: #5a5a5a;
+    }
+
+	.well {
+		background-color:#ffffff;
+		opacity:0.8;
+		filter:alpha(opacity=60);
+	}
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar {
+      position: relative;
+      top: 50;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: -35px;
+      margin-bottom: 0px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar .navbar {
+
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+              box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .carousel {
+      margin-bottom: 60px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+    }
+
+    .carousel .item {
+      height: 500px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 500px;
+    }
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-top: 200px;
+    }
+    .carousel-caption h1,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      color: #000;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+    }
+
+
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: normal;
+    }
+    .marketing .span4 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="http://twitter.github.com/bootstrap/assets/ico/favicon.png">
+  </head>
+
+  <body>
+
+
+
+
+
+
+    <!-- Carousel
+    ================================================== -->
+  <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item">
+          <img src="./Carousel Template · Bootstrap_files/slide-03.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="./Carousel Template · Bootstrap_files/slide-01.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+			  <div class="well well-small">
+              <h1>Big Apple</h1>
+              <p class="lead" >На нашем сайте представлен лучший способ ознакомиться с невероятным современным Нью-Йорком!</p>
+              <a class="btn btn-large btn-primary" href="http://www.aviasales.ru/city/nyu-iork">Узнать больше</a>
+			  </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="./img/New_York_Taxi.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+			  <div class="well well-small">
+              <h1>Транспорт</h1>
+              <p class="lead">Нью-Йорк имеет крайне разветвлённую транспортную систему, в которой может запутаться даже местный житель. Мы представили не большое количество информации по транспортной системе Нью-Йорка</p>
+              <a class="btn btn-large btn-primary" href="etc.htm">Узнать Больше</a>
+			  </div>
+            </div>
+          </div>
+        </div>
+		        <div class="item active">
+          <img src="./img/cherno-belye-foto-nyu-yorka-v-xx-veke-6.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+			<div class="well well-small">
+              <h1>История</h1>
+              <p class="lead">От Нового Амстердама до "Большого яблока". Город насчитывающий более трёхсот лет истории!</p>
+              <a class="btn btn-large btn-primary" href="history.htm">Узнать Больше</a>
+            </div>
+			</div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="http://twitter.github.com/bootstrap/examples/carousel.html#myCarousel" data-slide="prev">‹</a>
+      <a class="right carousel-control" href="http://twitter.github.com/bootstrap/examples/carousel.html#myCarousel" data-slide="next">›</a>
+    </div><!-- /.carousel -->
+	
+    <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="./Carousel Template · Bootstrap.htm">What it's like in New York City?</a>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li><a href="http://www.aviasales.ru/city/nyu-iork_blank">Узнать больше...</a></li>
+                <li class=""><a href="./History.htm">История</a></li>
+                <li class="dropdown">
+                  <a href="./Carousel Template · Bootstrap_files/Carousel Template · Bootstrap.htm" class="dropdown-toggle" data-toggle="dropdown">Еще... <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="etc.htm">Транспорт</a></li>
+                    <li class="divider"></li>
+                    <li><a href="etc.htm">О сайте</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <div class="row">
+
+        <div class="span12">
+          
+          <div class="well sidebar-nav">
+            <div class="tabbable tabs-left">
+			<li class="nav-header">Топ-5 мест</li>
+              <ul class="nav nav-tabs">
+                <li class=""><a href="#lA" data-toggle="tab">Empire State Building</a></li>
+                <li class=""><a href="#lB" data-toggle="tab">Times Square</a></li>
+                <li class=""><a href="#lC" data-toggle="tab">Ground Zero/Freedom Tower</a></li>
+				<li class=""><a href="#lD" data-toggle="tab">Central Park</a></li>
+				<li class=""><a href="#lE" data-toggle="tab">Statue of Liberty</a></li>
+			</ul>
+              <div class="tab-content">
+                <div class="tab-pane" id="lA">
+                  <p>
+						<h3 align="center">Эмпайр-стейт-билдинг</h3>
+						<img src="./img/empire.jpg" class="img-polaroid" align="right">
+						<p>
+						Эмпайр-стейт-билдинг — 102-этажный небоскрёб, расположенный в Нью-Йорке на острове Манхэттен. Офисное здание.
+						Архитектуру здания относят к стилю ар-деко.
+						В 1986 году Эмпайр-стейт-билдинг вошёл в список национальных исторических памятников США.
+						<p>
+						Одна из главных визитных карточек города, башня была построена 1931, и с тех пор поражала свежестью архитектурных решений и красотой.
+						К вашим услугам 2 смотровые площадки на 86 и 102 этажах, аттракцион New York Skyride, зал рекордов Гиннеса и 8 панно с чудесами света, последним из который является сам Эмпайр-Стейт-билдинг
+						</p>
+						<P>
+						В 1933 году на экраны вышел кинофильм «Кинг-Конг», в котором именно на крыше Эмпайр-стейт-билдинга происходило сражение с гигантской гориллой. Образ этого здания оказался запечатлённым в сознании миллионов зрителей: по его стенам вверх карабкалось чудовище, которое сверху атаковали многочисленные самолёты. В 1983 году, в рамках празднования 50-летия этого фильма, на вершину здания был установлен надувной Кинг-Конг в натуральную величину. В 2005 году был снят ремейк культовой картины 30-х годов, в котором финальная сцена также проходит на башне.
+						А так же здание фигурирует почти в каждом фильме, снятом в Нью-Йорке.
+						</p>
+						Находится башня на Пятой авеню между Западными 33-й и 34-й улицами.
+						</p>
+						<iframe width="562" height="314" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.ru/maps?q=Empire+State+Building,+5th+Avenue,+New+York,+NY,+United+States&amp;hl=ru&amp;sll=40.748167,-73.985023&amp;sspn=0.009217,0.021136&amp;oq=em&amp;t=h&amp;hq=Empire+State+Building,+5th+Avenue,+New+York,+NY,+United+States&amp;layer=c&amp;cbll=40.74803,-73.984832&amp;panoid=FAKoKygtcFWCADIL2suUiw&amp;cbp=13,285.81,,0,-49.43&amp;ie=UTF8&amp;ll=40.745164,-73.9835&amp;spn=0.005105,0.012059&amp;z=16&amp;source=embed&amp;output=svembed"></iframe><br /><small><a href="https://maps.google.ru/maps?q=Empire+State+Building,+5th+Avenue,+New+York,+NY,+United+States&amp;hl=ru&amp;sll=40.748167,-73.985023&amp;sspn=0.009217,0.021136&amp;oq=em&amp;t=h&amp;hq=Empire+State+Building,+5th+Avenue,+New+York,+NY,+United+States&amp;layer=c&amp;cbll=40.74803,-73.984832&amp;panoid=FAKoKygtcFWCADIL2suUiw&amp;cbp=13,285.81,,0,-49.43&amp;ie=UTF8&amp;ll=40.745164,-73.9835&amp;spn=0.005105,0.012059&amp;z=16&amp;source=embed" style="color:#0000FF;text-align:left">Просмотреть увеличенную карту</a></small>						
+				  </p>
+                </div>
+                <div class="tab-pane" id="lB">
+                  <h3 align="center">Times Square</h3>
+						
+					<img src="./img/Times.jpg" class="img-polaroid" align="right">
+				  <p>
+					Таймс-сквер — площадь в центральной части Манхэттена в городе Нью-Йорке в США, расположенная на пересечении Бродвея и Седьмой авеню в промежутке между 42-й и 47-й улицами. Одно из наиболее популярных и часто посещаемых мест в Нью-Йорке. Площадь получила своё название от ранее находившегося здесь главного офиса газеты Нью-Йорк Таймс.
+				  </p>
+					<p>
+					Бродвейские театры, огромное количество яркой неоновой рекламы и указатели в телевизионном стиле сделали Таймс-сквер одним из неотъемлемых символов бурной жизни Нью-Йорка. Это единственный район города, где его обитатели обязаны выставлять яркие рекламные щиты.
+					</p>
+					<p>
+					Густота неоновой рекламы на площади соперничает с рекламой Лас-Вегаса. Официально, рекламные щиты на Таймс-сквер называют «театральными».
+					В 1992 году начал свою деятельность Альянс Таймс-сквер (ранее известный как Times Square Business Improvement District) — объединение бизнесов, призванных улучшить качество коммерции и чистоту района. В настоящий момент площадь может похвастаться «Студией Таймс-сквер» телекомпании ABC, откуда в прямом эфире идёт ежедневная передача «Доброе утро, Америка»; детально разработанными магазинами известных фирм Toys «R» Us, Virgin Records and Hershey’s; ресторанами кухонь мира и рядом современных кинотеатров. На площади и возле неё также имеется большое количество головных офисов крупных финансовых, издательских и медийных корпораций. Большой полицейский участок на площади способствует безопасности в районе.
+					</p>
+					<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=ru&amp;geocode=&amp;q=Times+Square,+New+York,+NY,+United+States&amp;aq=1&amp;oq=Time&amp;sll=37.0625,-95.677068&amp;sspn=39.371738,86.572266&amp;t=h&amp;ie=UTF8&amp;hq=&amp;hnear=Theater+District+-+Times+Square,+New+York&amp;ll=40.759011,-73.984472&amp;spn=0.010562,0.01282&amp;layer=c&amp;cbll=40.758364,-73.985485&amp;panoid=9g3b4FRxSUgNTX038KUIjw&amp;cbp=13,24.03,,0,-10.6&amp;output=svembed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=ru&amp;geocode=&amp;q=Times+Square,+New+York,+NY,+United+States&amp;aq=1&amp;oq=Time&amp;sll=37.0625,-95.677068&amp;sspn=39.371738,86.572266&amp;t=h&amp;ie=UTF8&amp;hq=&amp;hnear=Theater+District+-+Times+Square,+New+York&amp;ll=40.759011,-73.984472&amp;spn=0.010562,0.01282&amp;layer=c&amp;cbll=40.758364,-73.985485&amp;panoid=9g3b4FRxSUgNTX038KUIjw&amp;cbp=13,24.03,,0,-10.6" style="color:#0000FF;text-align:left">Просмотреть увеличенную карту</a></small>
+                </div>
+                <div class="tab-pane" id="lC">
+                  <h3 align="center">Национальный мемориал и музей 11 сентября</h3>
+				  <img src="./img/Zero.jpg" class="img-polaroid" align="center">
+				  <p>
+				  Национальный мемориал и музей 11 сентября  — комплекс, расположенный на месте разрушенных в 2001 году башен Всемирного торгового центра.
+				  Мемориал состоит из группы деревьев, окружающих огромные бассейны на том месте, где стояли башни. Памятник посвящён тем, кто погиб в день терактов и участвовал в спасении людей.				 
+				  </p>
+				  <table cellspacing="4" cellpadding="4" style="width:&nbsp;; border: 1px solid #aaa; font-size: 90&nbsp;%; padding: 4px; margin: 0.5em auto 0.8em; background-color: #f9f9f9;">
+					<tbody><tr>
+							<td style="text-align:left;">
+							<div><i>Цели мемориала:</i>
+							<ul>
+							<li>Помнить и чтить память тысячи невинных мужчин, женщин и детей, погибших в результате страшных атак 26 февраля 1993 года и 11 сентября 2001 года.</li>
+							<li>Уважение места трагической гибели людей.</li>
+							<li>Признание выносливости тех, кто выжил, мужества тех, кто рисковал своей жизнью ради спасения других и благодарность всем, кто помогал нам в тяжёлые минуты.</li>
+							<li>Пусть живут воспоминания, и дух, который будет вечным маяком, свидетельствует о бесценности жизни, укрепляет нашу решимость сохранить свободу и вдохновляет на искоренение ненависти, невежества и нетерпимости.</li>
+							</ul>
+							</div>
+							<div style="text-align:right;">—<a rel="nofollow" class="external text" href="http://www.national911memorial.org/site/PageServer?pagename=about_home">Официальный сайт мемориала</a></div>
+							</td>
+							</tr>
+					</tbody></table>
+				  <h3 align="center">Башня Свободы</h3>
+				  <p>
+				  Всемирный торговый центр 1, или Башня Свободы — центральное здание в новом комплексе Всемирного торгового центра, строящегося в нижнем Манхэттене.Стройка в 2008 году
+					Здание будет расположено в северо-западном углу участка площадью 65000 квадратных метров, на котором располагался разрушенный 11 сентября 2001 года предыдущий комплекс зданий Всемирного торгового центра, включая известные башни-близнецы. Работы по строительству здания начались 27 апреля 2006 года. 19 декабря 2006 года были установлены первые стальные колонны в основание здания.
+					Ещё три высотных офисных здания и высотное жилое здание, как планируется, будут построены на этой же территории вдоль улицы Гринвич, окружая таким образом мемориал, посвященный трагедии 11 сентября 2001 года (мемориал был открыт в 2011 году действующим президентом Б. Обамой и Дж. Бушем, при котором произошёл теракт). Окончание строительства Башни Свободы планируется в 2013 году.
+				  </p>
+  				  <img src="./img/freedom.jpg" class="img-polaroid" align="center">
+				  <p></p>
+<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.ru/maps?f=q&amp;source=s_q&amp;hl=ru&amp;geocode=&amp;q=&amp;aq=t&amp;sll=40.711923,-74.011996&amp;sspn=0.004261,0.010568&amp;t=h&amp;ie=UTF8&amp;ll=40.71148,-74.012489&amp;spn=0.002131,0.005284&amp;z=18&amp;output=embed"></iframe><br /><small><a href="https://maps.google.ru/maps?f=q&amp;source=embed&amp;hl=ru&amp;geocode=&amp;q=&amp;aq=t&amp;sll=40.711923,-74.011996&amp;sspn=0.004261,0.010568&amp;t=h&amp;ie=UTF8&amp;ll=40.71148,-74.012489&amp;spn=0.002131,0.005284&amp;z=18" style="color:#0000FF;text-align:left">Просмотреть увеличенную карту</a></small>                </div>
+				<div class="tab-pane" id="lD">
+					<h3 align="center">Центральный парк</h3>
+					<img src="./img/park.png" class="img-polaroid" align="center">
+						<p>
+						Центральный парк (англ. Central Park) в Нью-Йорке является одним из крупнейших и известнейших парков в мире. Парк расположен на острове Манхэттен между 59-й и 110-й улицей и Пятой и Восьмой авеню и таким образом имеет прямоугольную форму. Длина парка — 4 километра, ширина — 800 метров, общая площадь — 3,4 км². Парк посещают примерно 25 миллионов человек в год, он является наиболее посещаемым парком в США[1], и его показ во многих фильмах и телевизионных шоу сделал парк одним из самых знаменитых в мире.
+						Проект парка был разработан архитекторами Фредериком Олмстедом (Frederick Law Olmsted) и Калвертом Воксом (Calvert Vaux). Последний позднее основал большой Проспект Парк в Бруклине. Несмотря на то, что парк выглядит очень натурально, практически все ландшафты созданы вручную. 
+						В парке есть несколько искусственных озёр, большое количество аллей, два ледовых катка, уголки нетронутой дикой природы и лужайки, используемые для различных спортивных состязаний, а также детские игровые площадки и свой зоопарк.
+						В парк залетают мигрирующие птицы, и поэтому он очень популярен среди любителей птиц. 10-километровая дорога, окружающая парк, часто используется бегунами, велосипедистами и любителями роликовых коньков, особенно в выходные дни и после 7 часов вечера, когда автомобильное движение запрещено. 
+						Центральный парк часто называют зелеными легкими Манхэттена.
+						</p>
+						
+						<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.ru/maps?q=central+park&amp;ie=UTF8&amp;hq=central+park&amp;ll=40.782551,-73.96547&amp;spn=0.035938,0.032109&amp;t=h&amp;layer=c&amp;cbll=40.765618,-73.976123&amp;panoid=po-4zh_Z2_daQ7aia44G6Q&amp;cbp=12,68.98,,0,1.28&amp;source=embed&amp;output=svembed"></iframe><br /><small><a href="https://maps.google.ru/maps?q=central+park&amp;ie=UTF8&amp;hq=central+park&amp;ll=40.782551,-73.96547&amp;spn=0.035938,0.032109&amp;t=h&amp;layer=c&amp;cbll=40.765618,-73.976123&amp;panoid=po-4zh_Z2_daQ7aia44G6Q&amp;cbp=12,68.98,,0,1.28&amp;source=embed" style="color:#0000FF;text-align:left">Просмотреть увеличенную карту</a></small>
+                </div>
+				<div class="tab-pane" id="lE">
+					<h3 align="center">Статуя Свободы</h3>
+					<img src="./img/Liberty.jpg" class="img-polaroid" align="center">
+					<p>
+					Ста́туя Свобо́ды(англ. Statue of Liberty, полное название — Свобо́да, озаря́ющая мир, англ. Liberty Enlightening the World) — одна из самых знаменитых скульптур в США и в мире, часто называемая «символом Нью-Йорка и США», «символом свободы и демократии», «Леди Свобода».
+					Это подарок французских граждан к столетию американской революции.
+					Статуя Свободы находится на острове Свободы , примерно в 3 км на юго-запад от южной оконечности Манхэттена, в Нью-Джерси.
+					До 1956 г. остров назывался «остров Бедлоу», хотя в народе его называли «островом Свободы» уже с начала XX века.
+					Богиня свободы держит факел в правой руке и скрижаль в левой. Надпись на скрижали гласит «англ. JULY IV MDCCLXXVI» (написанная римскими цифрами дата «4 июля 1776»), эта дата является днем принятия Декларации независимости США. Одной ногой «Свобода» стоит на разбитых оковах.
+					Посетители проходят 356 ступеней до короны статуи свободы или 192 ступени до вершины пьедестала. В короне расположено 25 окон, которые символизируют земные драгоценные камни и небесные лучи, освещающие мир. Семь лучей на короне статуи символизируют семь морей и семь континентов(западная географическая традиция насчитывает именно семь континентов).
+					Общий вес меди, использованной для отлива статуи, — 31 тонна, а общий вес её стальной конструкции — 125 тонн. Общий вес бетонного основания — 27 тыс. тонн. Толщина медного покрытия статуи — 2,57 мм.
+					Высота от земли до кончика факела — 93 метра, включая основание и пьедестал. Высота самой статуи, от верха пьедестала до факела — 46 метров.
+					Статуя была построена из тонких листов меди, отчеканенных в деревянных формах. Сформированные листы потом были установлены на стальной каркас.
+					Обычно статуя открыта для посетителей, как правило, прибывающих на пароме. Из короны, в которую можно подняться по лестнице, открывается обширный вид на нью-йоркскую гавань. В музее, расположенном в пьедестале (и доступном на лифте), находится выставка истории статуи.
+					</p>
+					<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.ru/maps?f=q&amp;source=embed&amp;hl=ru&amp;geocode=&amp;q=%D0%A1%D1%82%D0%B0%D1%82%D1%83%D1%8F+%D0%A1%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D0%B8,+%D0%9D%D1%8C%D1%8E-%D0%99%D0%BE%D1%80%D0%BA,+%D0%A1%D0%BE%D0%B5%D0%B4%D0%B8%D0%BD%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5+%D0%A8%D1%82%D0%B0%D1%82%D1%8B+%D0%90%D0%BC%D0%B5%D1%80%D0%B8%D0%BA%D0%B8&amp;aq=0&amp;oq=%D1%81%D1%82%D0%B0%D1%82%D1%83%D1%8F&amp;sll=53.748711,103.007813&amp;sspn=55.683836,173.144531&amp;t=h&amp;ie=UTF8&amp;hq=%D0%A1%D1%82%D0%B0%D1%82%D1%83%D1%8F+%D0%A1%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D0%B8,+%D0%9D%D1%8C%D1%8E-%D0%99%D0%BE%D1%80%D0%BA,+%D0%A1%D0%BE%D0%B5%D0%B4%D0%B8%D0%BD%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5+%D0%A8%D1%82%D0%B0%D1%82%D1%8B+%D0%90%D0%BC%D0%B5%D1%80%D0%B8%D0%BA%D0%B8&amp;ll=40.690049,-74.045068&amp;spn=0.016921,0.032015&amp;layer=c&amp;cbll=40.69081,-74.054891&amp;panoid=JKCwYHsGoIPFUojp1WX8jQ&amp;cbp=12,105.44,,0,7.58&amp;output=svembed"></iframe><br /><small><a href="https://maps.google.ru/maps?f=q&amp;source=embed&amp;hl=ru&amp;geocode=&amp;q=%D0%A1%D1%82%D0%B0%D1%82%D1%83%D1%8F+%D0%A1%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D0%B8,+%D0%9D%D1%8C%D1%8E-%D0%99%D0%BE%D1%80%D0%BA,+%D0%A1%D0%BE%D0%B5%D0%B4%D0%B8%D0%BD%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5+%D0%A8%D1%82%D0%B0%D1%82%D1%8B+%D0%90%D0%BC%D0%B5%D1%80%D0%B8%D0%BA%D0%B8&amp;aq=0&amp;oq=%D1%81%D1%82%D0%B0%D1%82%D1%83%D1%8F&amp;sll=53.748711,103.007813&amp;sspn=55.683836,173.144531&amp;t=h&amp;ie=UTF8&amp;hq=%D0%A1%D1%82%D0%B0%D1%82%D1%83%D1%8F+%D0%A1%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D0%B8,+%D0%9D%D1%8C%D1%8E-%D0%99%D0%BE%D1%80%D0%BA,+%D0%A1%D0%BE%D0%B5%D0%B4%D0%B8%D0%BD%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5+%D0%A8%D1%82%D0%B0%D1%82%D1%8B+%D0%90%D0%BC%D0%B5%D1%80%D0%B8%D0%BA%D0%B8&amp;ll=40.690049,-74.045068&amp;spn=0.016921,0.032015&amp;layer=c&amp;cbll=40.69081,-74.054891&amp;panoid=JKCwYHsGoIPFUojp1WX8jQ&amp;cbp=12,105.44,,0,7.58" style="color:#0000FF;text-align:left">Просмотреть увеличенную карту</a></small>
+                </div>
+              </div>
+            </div>
+          </div><!--/.well -->
+     
+
+      </div><!-- /.row -->
+
+
+
+
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#myCarousel">Back to top</a></p>
+        <p>© 2013 NYC, and forever NYC</p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./Carousel Template · Bootstrap_files/jquery.js"></script>
+    <script src="./Carousel Template · Bootstrap_files/bootstrap-transition.js"></script>
+    <script src="./Carousel Template · Bootstrap_files/bootstrap-alert.js"></script>
+    <script src="./Carousel Template · Bootstrap_files/bootstrap-modal.js"></script>
+    <script src="./Carousel Template · Bootstrap_files/bootstrap-dropdown.js"></script>
+    <script src="./Carousel Template · Bootstrap_files/bootstrap-scrollspy.js"></script>
+    <script src="./Carousel Template · Bootstrap_files/bootstrap-tab.js"></script>
+    <script src="./Carousel Template · Bootstrap_files/bootstrap-tooltip.js"></script>
+    <script src="./Carousel Template · Bootstrap_files/bootstrap-popover.js"></script>
+    <script src="./Carousel Template · Bootstrap_files/bootstrap-button.js"></script>
+    <script src="./Carousel Template · Bootstrap_files/bootstrap-collapse.js"></script>
+    <script src="./Carousel Template · Bootstrap_files/bootstrap-carousel.js"></script>
+    <script src="./Carousel Template · Bootstrap_files/bootstrap-typeahead.js"></script>
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
+
+  
+
+</body></html>
